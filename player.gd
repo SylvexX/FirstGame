@@ -39,14 +39,14 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	hide()
 	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", false)
+	$CollisionShape2D.set_deferred("disabled", true)
 	pass # Replace with function body.
 
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disables", false)
 	
